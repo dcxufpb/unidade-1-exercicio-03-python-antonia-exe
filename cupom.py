@@ -12,5 +12,35 @@ cnpj = "42.591.651/0797-34"
 inscricao_estadual = "244.898.500.113"
 
 def imprime_dados_loja():
-    # Implemente aqui
-    return "" 
+
+    global numero 
+    if nome_loja == "":
+        return "O campo nome da loja é obrigatório"
+
+    if logradouro == "":
+        return "O campo logradouro do endereço é obrigatório"
+
+    if municipio == "":
+        return "O campo município do endereço é obrigatório"
+
+    if estado == "":
+        return "O campo estado do endereço é obrigatório"
+    
+    if numero == 0:
+        numero = "s/n"
+
+    if cnpj == "":
+        return "O campo CNPJ da loja é obrigatório"
+  
+    if inscricao_estadual == "":
+        return "O campo inscrição estadual da loja é obrigatório"
+
+    return f'''{nome_loja}
+{logradouro}, {numero} {complemento}
+{bairro} - {municipio} - {estado}
+CEP:{cep} Tel {telefone}
+{observacao}
+CNPJ: {cnpj}
+IE: {inscricao_estadual}
+'''
+
